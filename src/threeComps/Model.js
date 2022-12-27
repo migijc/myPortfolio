@@ -3,12 +3,14 @@ import { useLoader } from "@react-three/fiber"
 import { useEffect } from "react"
 import { useThree } from "@react-three/fiber"
 
+
 export default function Model(){
 
-    let model= useLoader(GLTFLoader, "./name.glb")
-    
+    let model= useLoader(GLTFLoader, "./scene.glb")
+    const {camera}= useThree()
+      
     
 
 
-    return <primitive object={model.scene}/>
+    return <primitive object={model.scene} position={[-0.1, -3.5, 0]} />
 }

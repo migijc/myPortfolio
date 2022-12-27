@@ -8,6 +8,179 @@ html,
 }
 
 canvas{
-  background-color: rgb(39, 39, 39);
+  background-color: rgb(17, 17, 17);
+  z-index: 0;
 }
 
+:root{
+  --almost-black:  rgb(17, 17, 17);
+  --port-blue:  rgb(18, 139, 231);
+}
+
+.home-page{
+  width: 100%;
+  height: 100vh;
+}
+
+.parallax-page{
+  height: 100vh;
+}
+
+.menu-icon{
+  color: rgb(255, 255, 255);
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 8rem;
+  top: 4rem;
+  font-size: 3rem;
+}
+
+.menu-bar{
+  position: absolute;
+  top:0;
+  z-index: 1;
+  right: 8rem;
+  top: 6.5rem
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li{
+  list-style: none;
+}
+
+.menu-bar > ul > li > button {
+  background-color: transparent;
+  border: none;
+  color: black;
+  width: 100%;
+}
+
+.menu-bar > ul > li > button:hover {
+  background-color: black;
+  color: white
+
+}
+
+.menu-bar > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  justify-content: center;
+  padding: 3rem;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.description-home{
+   position: absolute;
+   top: 0;
+   color: white;
+   top: 80%;
+   transform: translateY(-50%);
+   left: 4rem;
+   font-size: 4rem;
+}
+
+.about-me-page,
+.projects-page{
+  padding: 2rem;
+  width: 100%;
+  font-family:roboto;
+}
+
+.page-title{
+  font-size: 40px;
+  font-family: roboto;
+  padding-bottom: .5rem;
+  color: var(--almost-black)
+}
+
+.projects-title{
+  color: white;
+}
+
+.page-title-seperator{
+  /* padding-bottom: 2rem; */
+  height: .1px;
+  border: none;
+  background-color: gray;
+}
+
+.my-pic{
+  width: 12rem;
+  height: auto;
+  border-radius: 900rem;
+}
+
+.main-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
+  width: 100%;
+  height: 100%;
+}
+
+.page-split{
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  width: 100%;
+  height: 100;
+
+}
+
+.main-content-section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+ p {
+  width: 70ch;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+h2{
+  padding-bottom: 1rem;
+  color: var(--port-blue)
+}
+
+.featured-projects{
+  padding-top: 3rem;
+  display: flex;
+  gap: 4rem;
+}
+
+.featured-image{
+  width: 40rem;
+}
+
+.my-skills{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding-top: 2rem;
+}
+
+.skill > ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h3{
+  color: gray;
+  font-size:1.3rem;
+}
