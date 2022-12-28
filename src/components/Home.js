@@ -1,4 +1,4 @@
-import ThreeScene from "../threeComps/ThreeScene"
+import ThreeScene from "../components/threeComps/ThreeScene"
 import {FiMenu} from "react-icons/fi"
 import {VscMenu} from "react-icons/vsc"
 import Menu from "./Menu"

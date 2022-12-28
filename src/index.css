@@ -8,12 +8,12 @@ html,
 }
 
 canvas{
-  background-color: rgb(17, 17, 17);
+  background-color: var(--almost-black);
   z-index: 0;
 }
 
 :root{
-  --almost-black:  rgb(17, 17, 17);
+  --almost-black:  rgb(31,31,31);
   --port-blue:  rgb(18, 139, 231);
 }
 
@@ -87,6 +87,7 @@ li{
    transform: translateY(-50%);
    left: 4rem;
    font-size: 4rem;
+   z-index: 1;
 }
 
 .about-me-page,

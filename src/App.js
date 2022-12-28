@@ -1,5 +1,4 @@
 import {ParallaxLayer, Parallax} from "@react-spring/parallax"
-import ThreeScene from "./threeComps/ThreeScene";
 import { Suspense } from "react";
 import Home from "./components/Home";
 import AboutMe from "./components/AboutMe";
