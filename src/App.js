@@ -17,11 +17,12 @@ function App() {
   }
   
   return (
-    <Suspense>
     <div className="App">
+      <Suspense fallback={<div className="loader">hey</div>} >
+
       <SideBar handleClick={handleMenuClick}/>
       <div className="main-page">
-        <Parallax pages={4} style={{width: "90vw"}} ref={parallaxRef}>
+        <Parallax pages={4} className="parallaxCon" style={{width:"90vw"}} ref={parallaxRef}>
           <ParallaxLayer speed={1.2}>
               <PageDecorationHeader/>
               <Home/>
@@ -41,7 +42,7 @@ function App() {
               <PageDecorationFooter/>
             </div>
           </ParallaxLayer>
-          <ParallaxLayer offset={3}>
+          <ParallaxLayer offset={3} speed={1}>
             <div className="parallax-page-container">
                 <PageDecorationHeader/>
                 <ContactMe/>
@@ -50,8 +51,8 @@ function App() {
           </ParallaxLayer>
         </Parallax>
       </div>
+      </Suspense>
     </div>
-    </Suspense>
   );
 }
 
