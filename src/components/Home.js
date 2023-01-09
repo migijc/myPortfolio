@@ -14,12 +14,17 @@ export default function Home(){
         }
     }
 
+
+
     return (
         <section className="home-page">
             <ThreeScene/>
-            <VscMenu className="icon menu-icon" onClick={handleMenuClick}/>
-            {displayOn && <Menu/>}
-            <p className="description-home">Frontend && <br/> UX/UI Developer</p>
+            {/* <VscMenu className="icon menu-icon" onClick={handleMenuClick}/> */}
+            {/* {displayOn && <Menu/>} */}
+            <p className="description-home-top">Hey, I'm </p>
+            <p className="description-home-bottom">Frontend Web Developer</p>
+            <button className="contact-me-btn">Contact me</button>
+
             
 
         </section>

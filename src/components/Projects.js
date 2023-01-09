@@ -1,51 +1,35 @@
-import instaImage from "../img/instaImage.png"
-import ifind from "../img/photoTag.png"
+import ProjectsDisplay from "./ProjectsDisplay"
+import { useState } from "react"
+import OpenProject from "./OpenProject"
+import {AiOutlineCloseCircle} from "react-icons/ai"
 
 export default function Projects(){
+    const [viewedProject, setViewedProject] = useState(null)
+
+    let closeProject= <AiOutlineCloseCircle className="close-project-icon" onClick={()=>setViewedProject(null)}/>
+
+
+    function updateProjectToOpen(project){
+        setViewedProject(project)
+    }
 
     return (
         <section className="projects-page">
-        <h1 className="page-title projects-title">{"<projectsAndSkills/>"}</h1>
-        <hr className="page-title-seperator"/>
         <div className="main-content">
-            <h2>See my Github</h2>
-            <p>Through out my journey, specificially on theodinproject.com, I was tasked with over twenty relatively small projects. All of which can be seen on my Github https://github.com/migijc. 
-                Aside from my portfolio webisite my two favorite projects that I worked on are a clone of Instagram and a photo-tagging game similar to "Where's Waldo". Both can be seen below and the source code can also be viewed on my
-                 Github.
+            <div className="left">
+                 <h1 className="page-title projects-title">Projects</h1>
+            
+            <p className="about-me-para main-para">
+                During my journey, I had the opportunity to complete over 20 small projects as part of my studies on theodinproject.com.
+                 These projects can be viewed on my Github profile <a href="https://github.com/migijc">here</a>.<br/>
+                  <br/>Among these projects, my personal favorites were a replica of the popular photo-sharing app Instagram and a photo-tagging game similar to "Where's Waldo".
+                   You can see these projects and a few others below, the source code is also available for review on my Github.
             </p>
-            <section className="featured-projects">
-                <img className="featured-image" src= {instaImage}/>
-                <img className="featured-image" src= {ifind}/>
-            </section>
-            <section className="my-skills">
-                <div className="skill">
-                    <h3>Languages</h3>
-                    <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
-                        <li>JSX</li>
-
-                    </ul>
-                </div>
-                <div className="skill">
-                <h3>Frameworks && Libraries</h3>
-                    <ul>
-                        <li>React.js</li>
-                        <li>Three.js</li>
-                        <li>Bootstrap</li>
-                        <li>Node.js</li>
-                        <li>Webpack</li>
-                    </ul>
-                </div>
-                <div className="skill">
-                <h3>UI/UX Related</h3>
-                    <ul>
-                        <li>Adobe XD</li>
-                        <li>Blender (Basic-level)</li>
-                    </ul>
-                </div>
-            </section>
+            </div>
+            <div className="right">
+                <ProjectsDisplay  updateProjectToOpen={updateProjectToOpen}/>
+            </div>
+            {viewedProject && <OpenProject name={viewedProject} closeButton={closeProject}/>}
         </div>
     </section>
     )

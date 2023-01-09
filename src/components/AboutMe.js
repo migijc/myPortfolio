@@ -1,14 +1,49 @@
 import myPic from "../img/myPicCropped.jpg"
+import { Canvas } from "@react-three/fiber"
+import MySkills from "./MySkills"
 
 export default function AboutMe(){
 
     return (
         <section className="about-me-page">
-            <h1 className="page-title about-me-title">{"<AboutMe/>"}</h1>
-            <hr className="page-title-seperator"/>
-            <div className="main-content">
-                <img src={myPic} className="my-pic"/>
-                <section className="page-split">
+                <div className="main-content">
+                 <div className="left">
+                 <h1 className="page-title about-me-title">About Me</h1>
+                    <div className="img-container">
+                        <img src={myPic} className="my-pic"/>
+                    </div>
+                    <p className="about-me-para main-para">
+                    A self taught Front-End Developer based in Miami, Florida, extremely passionate about creating engaging and dynamic user experiences through the use of UI effects and animations.<br/>
+                    <br/>I pride myself on being a well-organized, problem-solving individual with a strong attention to detail. I enjoy watching UFC and Formula1, as well as stand-up comedy.
+                    I also have a slight obsession with dogs. In addition to my professional pursuits, I love to spend time with my family. <br/>
+                    <br/>Overall, I am interested in all aspects of front-end development and am eager to work on challenging projects..
+                    </p>
+                 </div>
+                 <div className="right">
+                    <MySkills/>
+                </div>
+               </div>
+           
+            {/* <hr className="page-title-seperator"/> */}
+      
+        </section>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {/* <section className="page-split">
                     <div className="learning-journey main-content-section">
                         <h2>Learning Journey</h2>
                         <p>It wasn't until I was in my mid-20s that I finally got my chance to begin my journey. I had been working as a legal case manager at a  law firm,
@@ -21,7 +56,11 @@ export default function AboutMe(){
                                    and Merge Sort algorithms and how to implement them in code using Javascript. Im cery excited to see where this journey leads to next.
                               </p>
                     </div>
-                    <div className="pre-code main-content-section">
+              
+                </section> */}
+
+
+      {/* <div className="pre-code main-content-section">
                         <h2>Before Programming</h2>
                         <p>As a child, I was always fascinated by technology. I remember spending hours on end playing games on my computer and downloading movies and music using torrents.
                              I had a natural curiosity about how things worked and was always eager to learn more.Despite my passion for technology, I never took the opportunity to study it formally.
@@ -29,10 +68,4 @@ export default function AboutMe(){
                                I always had a thing for problem solving but I never quite put the two together. Aside from wages, obviously, the jobs I worked weren’t giving me a feeling of satisfaction,
                                 I worked basic jobs from customer service to more serious roles such as marketing director and legal case manager.
                                  After years of not really getting anywhere and working unfulfilling jobs I knew what my next step in life had to be, I know I couldn't have made a better choice. </p>
-                    </div>
-                </section>
-             
-            </div>
-        </section>
-    )
-}
+                    </div> */}
