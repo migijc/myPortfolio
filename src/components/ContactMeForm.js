@@ -13,9 +13,6 @@ export default function ContactMeForm() {
 
     let collectionRef = collection(db, "messagesReceived")
 
-    useEffect(() => {
-        console.log(collectionRef)
-    }, [])
 
     function handleNameInput(e) {
         setName(e.target.value)

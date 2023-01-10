@@ -7,8 +7,16 @@ export default function AboutMe(){
     return (
         <section className="about-me-page">
                 <div className="main-content">
-                 <div className="left">
-                 <h1 className="page-title about-me-title">About Me</h1>
+                    <div className="left">
+                    <h1 className="page-title about-me-title">
+                        <span className="about-ch-one">A</span>
+                        <span className="about-ch-two">b</span>
+                        <span className="about-ch-three">o</span>
+                        <span className="about-ch-four">u</span>
+                        <span className="about-ch-five">t</span>
+                        <span className="about-ch-six">m</span>
+                        <span className="about-ch-seven">e</span>
+                    </h1>
                     <div className="img-container">
                         <img src={myPic} className="my-pic"/>
                     </div>

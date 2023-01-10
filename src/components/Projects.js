@@ -17,7 +17,16 @@ export default function Projects(){
         <section className="projects-page">
         <div className="main-content">
             <div className="left">
-                 <h1 className="page-title projects-title">Projects</h1>
+                 <h1 className="page-title projects-title">
+                    <span className="projects-ch-one">P</span>
+                    <span className="projects-ch-two">r</span>
+                    <span className="projects-ch-three">o</span>
+                    <span className="projects-ch-four">j</span>
+                    <span className="projects-ch-five">e</span>
+                    <span className="projects-ch-six">c</span>
+                    <span className="projects-ch-seven">t</span>
+                    <span className="projects-ch-eight">s</span>
+                 </h1>
             
             <p className="about-me-para main-para">
                 During my journey, I had the opportunity to complete over 20 small projects as part of my studies on theodinproject.com.
