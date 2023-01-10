@@ -1,14 +1,36 @@
 import myPic from "../img/myPicCropped.jpg"
 import { Canvas } from "@react-three/fiber"
 import MySkills from "./MySkills"
+import { useEffect, useRef } from "react"
+import { CgOptions } from "react-icons/cg"
 
 export default function AboutMe(){
+    const pageTitle= useRef(null)
+
+    let observer= new IntersectionObserver((entries, observer)=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                pageTitle.current.classList.add("on-screen")
+                setTimeout(()=>{
+                    pageTitle.current.classList.remove("on-screen")
+                }, 2200)
+            }
+        })
+    })
+
+    useEffect(()=>{
+        if(pageTitle){
+            observer.observe(pageTitle.current)
+        }
+    },[])
+
+
 
     return (
         <section className="about-me-page">
                 <div className="main-content">
                     <div className="left">
-                    <h1 className="page-title about-me-title">
+                    <h1 ref={pageTitle} className="page-title about-me-title">
                         <span className="about-ch-one">A</span>
                         <span className="about-ch-two">b</span>
                         <span className="about-ch-three">o</span>
