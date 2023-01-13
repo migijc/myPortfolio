@@ -1,6 +1,6 @@
 import { db } from "../FirebaseApp"
 import { collection, addDoc, doc } from "firebase/firestore"
-import { useEffect, useState, } from "react"
+import { useEffect, useRef, useState, } from "react"
 import {IoMdClose, IoMdCheckmark} from "react-icons/io"
 import {CgAsterisk} from "react-icons/cg"
 
@@ -10,6 +10,11 @@ export default function ContactMeForm() {
     const [email, setEmail] = useState("")
     const [subject, setSubject] = useState("")
     const [message, setMessage] = useState("")
+    const formRef = useRef(null)
+    const nameInputRef= useRef(null)
+    const emailInputRef= useRef(null)
+    const subjectInputRef= useRef(null)
+    const messageInputRef = useRef(null)
 
     let collectionRef = collection(db, "messagesReceived")
 
@@ -39,44 +44,35 @@ export default function ContactMeForm() {
 
     async function sendMessage(){
 console.log("attempting")
-        resetForm()
-        await addDoc((collectionRef), {
-            name,
-            email,
-            subject,
-            message,
-        })
-
-        console.log("complete")
+        // resetForm()
+        if(formRef.current.checkValidity()){
+            await addDoc((collectionRef), {
+                name,
+                email,
+                subject,
+                message,
+            })
+        } else{
+            formRef.current.reportValidity()
+        }
     }
 
-
-
     return (
-        <form>
+        <form noValidate ref={formRef}>
             <div className="name-input-container">
-                <input type="text" id="name" placeholder="Name" onChange={(e) => handleNameInput(e)} value={name} minLength="4ch"/>
+                <input type="text" id="name" placeholder="Name" onChange={(e) => handleNameInput(e)} value={name} ref={nameInputRef} minLength={2} required/>
                 {name === "" && <CgAsterisk className="input-validation-icon"/>}
-                <IoMdCheckmark className="input-validation-icon name-on-valid"/>
-                <IoMdClose className="input-validation-icon name-on-invalid"/>
-
             </div>
             <div className="email-input-container">
-                <input type="email" id="email" placeholder="Email" onChange={(e)=>handleEmailInput(e)} value={email}/>
+                <input type="email" id="email" placeholder="Email" onChange={(e)=>handleEmailInput(e)} value={email} ref={emailInputRef} required/>
                 {email === "" && <CgAsterisk className="input-validation-icon"/>}
-                <IoMdCheckmark className="input-validation-icon email-on-valid"/>
-                <IoMdClose className="input-validation-icon email-on-invalid"/>
-
             </div>
             <div className="subject-input-container">
-                <input type="text" id="subject" placeholder="Subject" onChange={(e)=>handleSubjectInput(e)} value={subject} minLength="3ch"/>
+                <input type="text" id="subject" placeholder="Subject" onChange={(e)=>handleSubjectInput(e)} value={subject} ref={subjectInputRef} required minLength={5} maxLength={70} />
                 {subject === "" && <CgAsterisk className="input-validation-icon"/>}
-                <IoMdCheckmark className="input-validation-icon subject-on-valid"/>
-                <IoMdClose className="input-validation-icon subject-on-invalid"/>
-
             </div>
             <div className="textarea-container">
-                <textarea placeholder="Message" onChange={(e)=>handleMessageInput(e)} value={message}></textarea>
+                <textarea placeholder="Message" onChange={(e)=>handleMessageInput(e)} value={message} ref={messageInputRef} required maxLength={500}></textarea>
             </div>
             <button onClick={()=>sendMessage()} className="send-message-btn" type="button"  >Send Message</button>
         </form>

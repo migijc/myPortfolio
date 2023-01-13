@@ -21,6 +21,17 @@ export default function Projects(){
     })
 
 
+    function animateHover(e){
+        e.target.classList.add("span-hovered")
+        setTimeout(()=>{
+            e.target.classList.remove("span-hovered")
+        }, 1000)
+    }
+
+
+
+
+
     useEffect(()=>{
         if(pageTitleRef){
             observer.observe(pageTitleRef.current)
@@ -37,14 +48,14 @@ export default function Projects(){
         <div className="main-content">
             <div className="left">
                  <h1 className="page-title projects-title" ref={pageTitleRef}>
-                    <span className="projects-ch-one">P</span>
-                    <span className="projects-ch-two">r</span>
-                    <span className="projects-ch-three">o</span>
-                    <span className="projects-ch-four">j</span>
-                    <span className="projects-ch-five">e</span>
-                    <span className="projects-ch-six">c</span>
-                    <span className="projects-ch-seven">t</span>
-                    <span className="projects-ch-eight">s</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="projects-ch-one">P</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="projects-ch-two">r</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="projects-ch-three">o</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="projects-ch-four">j</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="projects-ch-five">e</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="projects-ch-six">c</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="projects-ch-seven">t</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="projects-ch-eight">s</span>
                  </h1>
             
             <p className="about-me-para main-para">

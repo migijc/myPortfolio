@@ -9,6 +9,7 @@ export default function Home(props){
     const [displayOn, setDisplayOn] = useState(false)
     const textTop= useRef(null)
     const textBottom= useRef(null)
+
     
     function handleMenuClick(){
         if(!displayOn){

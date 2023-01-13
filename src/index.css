@@ -24,16 +24,30 @@ a {
   color: rgba(255, 196, 0);
 }
 
-a canvas {
+canvas {
   position: absolute;
   z-index: 0;
+  cursor: pointer;
 }
+
+/* a{
+  cursor: pointer;
+} */
+
+
 
 :root {
   --almost-black: rgb(29, 29, 29);
   --port-blue: #007FD0;
   --port-light-gray: rgb(115, 115, 115);
   --port-yellow: rgb(255, 196, 0);
+}
+
+@media(min-width: 3000px){
+
+  :root{
+    font-size: 2rem;
+  }
 }
 
 .main-page {
@@ -243,6 +257,7 @@ li {
   padding-top: 1rem;
   position: relative;
   color: rgb(220, 220, 220);
+  font-size: 1.2rem;
 }
 
 .main-content {
@@ -328,7 +343,7 @@ li {
 
 .about-me-para {
   /* font-weight: 600; */
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   width: 48ch;
 }
 
@@ -396,7 +411,7 @@ li {
   position: relative;
   border-radius: 9px;
   transform: rotateY(-40deg);
-  transition-duration: 300ms;
+  transition-duration: 500ms;
   z-index: 0;
 
 }
@@ -468,6 +483,8 @@ li {
 
 .project-name {
   font-size: 1.3rem;
+  color: var(--port-light-gray);
+  
 }
 
 .project-images-container>img {
@@ -496,7 +513,7 @@ form{
 }
 
 .contact-me-para{
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 input{
@@ -624,6 +641,13 @@ textarea{
   align-self: flex-start;
   padding-left: 0;
   position: relative;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+.page-title > .span-hovered{
+  animation: bounce 1s ease 1;
+
 }
 
 
@@ -727,6 +751,31 @@ textarea{
     transform: 
     scale(1,1)
     translateY(0);
+  }
+}
+
+.loading-page{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loading-logo{
+  width: 15%;
+}
+
+.loading-page > p{
+  font-size: 2rem;
+  color: var(--port-light-gray);
+  animation: fade-load 1.3s ease infinite
+}
+
+@keyframes fade-load{
+  50%{
+    opacity: 0;
   }
 }
 

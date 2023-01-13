@@ -11,7 +11,7 @@ export default function OpenProject(props){
     return (
         <div className="open-project-container">
             <div className="project-info">
-                <p className="project-name">{projects[props.name].projectName}</p>
+                <h2 className="project-name">{projects[props.name].projectName}</h2>
                 <p>{projects[props.name].projectDescription}</p>
                 <a href={projects[props.name].githubLink}> Source Code</a>
             </div>
@@ -47,7 +47,7 @@ let projects={
     },
 
     todo:{
-        projectName: "Todo List",
+        projectName: "To-do List",
         projectDescription: "This project is a simple and effective tool for organizing and managing tasks. It was built using HTML, CSS, JavaScript, and webpack. The website allows users to create a list of tasks and mark them as complete when finished. It features a clean and easy-to-use interface, making it quick and straightforward to add and check off tasks. The website also includes options for sorting tasks by priority and setting due dates, helping users to stay on top of their workload and stay organized. ",
         githubLink: "https://github.com/migijc/To-do",
         images:[todoMain]

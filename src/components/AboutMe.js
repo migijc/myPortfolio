@@ -25,19 +25,27 @@ export default function AboutMe(){
     },[])
 
 
+    function animateHover(e){
+        e.target.classList.add("span-hovered")
+        setTimeout(()=>{
+            e.target.classList.remove("span-hovered")
+        }, 1000)
+    }
+
+
 
     return (
         <section className="about-me-page">
                 <div className="main-content">
                     <div className="left">
                     <h1 ref={pageTitle} className="page-title about-me-title">
-                        <span className="about-ch-one">A</span>
-                        <span className="about-ch-two">b</span>
-                        <span className="about-ch-three">o</span>
-                        <span className="about-ch-four">u</span>
-                        <span className="about-ch-five">t</span>
-                        <span className="about-ch-six">m</span>
-                        <span className="about-ch-seven">e</span>
+                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-one">A</span>
+                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-two">b</span>
+                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-three">o</span>
+                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-four">u</span>
+                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-five">t</span>
+                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-six">m</span>
+                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-seven">e</span>
                     </h1>
                     <div className="img-container">
                         <img src={myPic} className="my-pic"/>
