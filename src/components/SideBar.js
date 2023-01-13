@@ -15,8 +15,8 @@ export default function SideBar(props){
         <img src={logo} className="logo"/>
         <Menu handleOptionClick={handleMenuClick}/>
         <div className="my-links">
-            <RiLinkedinFill className="link-to-LinkedIn link-icon"/>
-            <RiGithubFill className="link-to-github link-icon"/>
+            <a href="https://www.linkedin.com/in/miguel-gil-a7169316b" ><RiLinkedinFill className="link-to-LinkedIn link-icon"/></a>
+            <a href="https://github.com/migijc"><RiGithubFill className="link-to-github link-icon"/></a>
         </div>
       </section>
     )

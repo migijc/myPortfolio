@@ -229,12 +229,32 @@ li {
   z-index: 2;
   margin-top: 1rem;
   border-radius: 6px;
+  box-shadow: inset 0 0 0 0 var(--port-blue);
+  transition: all ease .8s;
+  -webkit-transition: all ease .8s;
+  -moz-transition: all ease .8s;
 }
+
+.send-message-btn{
+  grid-column-start: 1;
+  grid-column-end: -1;
+  padding: .6em;
+  background-color: transparent;
+  border: 1px solid var(--port-blue);
+  color: var(--port-blue);
+  font-size: 1rem;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 0 var(--port-blue);
+  transition: all ease .8s;
+  -webkit-transition: all ease .8s;
+  -moz-transition: all ease .8s;
+}
+
 
 .contact-me-btn:hover,
 .send-message-btn:hover {
-  background-color: rgb(50,50,50);
-  color:var(--port-blue);
+  box-shadow: inset 2000px 0 0 0 var(--port-blue);
+  color:white;
 }
 
 .about-me-page,
@@ -321,6 +341,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 6rem;
 
 }
@@ -439,11 +460,16 @@ li {
   border-radius: 6px;
   border: none;
   display: none;
+  box-shadow: inset 0 0 0 0 var(--port-yellow);
+  transition:all ease 8s;
+  -webkit-transition: all ease 0.8s;
+  -moz-transition: all ease 0.8s;
   /* border: 1px solid var(--port-blue); */
 }
 
 .view-project-button:hover {
-  background-color: var(--port-yellow);
+  /* background-color: var(--port-yellow); */
+  box-shadow: inset 2000px 0 0 0 var(--port-yellow);
   color: var(--almost-black);
 }
 
@@ -612,16 +638,6 @@ textarea{
   display: block;
 }
 
-.send-message-btn{
-  grid-column-start: 1;
-  grid-column-end: -1;
-  padding: .6em;
-  background-color: transparent;
-  border: 1px solid var(--port-blue);
-  color: var(--port-blue);
-  font-size: 1rem;
-  border-radius: 6px;
-}
 
 .input-validation-icon{
   color: rgb(181, 181, 181);
