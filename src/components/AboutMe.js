@@ -10,10 +10,12 @@ export default function AboutMe(){
     let observer= new IntersectionObserver((entries, observer)=>{
         entries.forEach(entry=>{
             if(entry.isIntersecting){
-                pageTitle.current.classList.add("on-screen")
+                setTimeout(()=>{
+                    pageTitle.current.classList.add("on-screen")
+                }, 400)
                 setTimeout(()=>{
                     pageTitle.current.classList.remove("on-screen")
-                }, 2200)
+                }, 2600)
             }
         })
     })
@@ -35,32 +37,34 @@ export default function AboutMe(){
 
 
     return (
-        <section className="about-me-page">
-                <div className="main-content">
-                    <div className="left">
-                    <h1 ref={pageTitle} className="page-title about-me-title">
-                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-one">A</span>
-                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-two">b</span>
-                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-three">o</span>
-                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-four">u</span>
-                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-five">t</span>
-                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-six">m</span>
-                        <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-seven">e</span>
-                    </h1>
-                    <div className="img-container">
+        <section className="about-me-page parallax-layer">       
+            <div className="main-content">
+                <h1 ref={pageTitle} className="page-title about-me-title">
+                    <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-one">A</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-two">b</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-three">o</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-four">u</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-five">t</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-six">m</span>
+                    <span onMouseEnter={(e)=>animateHover(e)} className="about-ch-seven">e</span>
+                </h1>     
+                <section className="primary-info-container page-info-container">
+                    <div className="my-pic-container">
                         <img src={myPic} className="my-pic"/>
                     </div>
-                    <p className="about-me-para main-para">
+                    <p className="about-primary-para primary-para">
                     A self taught Front-End Developer based in Miami, Florida, extremely passionate about creating engaging and dynamic user experiences through the use of UI effects and animations.<br/>
                     <br/>I pride myself on being a well-organized, problem-solving individual with a strong attention to detail. I enjoy watching UFC and Formula1, as well as stand-up comedy.
                     I also have a slight obsession with dogs. In addition to my professional pursuits, I love to spend time with my family. <br/>
-                    <br/>Overall, I am interested in all aspects of front-end development and am eager to work on challenging projects..
+                    <br/>Overall, I am interested in all aspects of front-end development and am eager to work on challenging projects.
                     </p>
-                 </div>
-                 <div className="right">
+                </section>
+                <section className="secondary-info-container page-info-container">
                     <MySkills/>
-                </div>
-               </div>
+                </section>
+            </div>
+
+            
            
             {/* <hr className="page-title-seperator"/> */}
       

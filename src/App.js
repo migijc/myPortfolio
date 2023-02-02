@@ -1,4 +1,4 @@
-import {ParallaxLayer, Parallax} from "@react-spring/parallax"
+import { ParallaxLayer, Parallax } from "@react-spring/parallax"
 import { Suspense, useEffect, useRef, useState } from "react";
 import Home from "./components/Home";
 import AboutMe from "./components/AboutMe";
@@ -6,80 +6,88 @@ import Projects from "./components/Projects";
 import SideBar from "./components/SideBar"
 import ContactMe from "./components/ContactMe";
 import LoadingScreen from "./components/LoadingScreen";
-
-
+import MenuBar from "./components/MenuBar";
+import {IoMenuOutline} from "react-icons/io5"
 
 
 function App() {
-  let parallaxRef = useRef()
-  const [load, setLoad] = useState(null)
+  let parallaxRef = useRef(null)
+  const [load, setLoad] = useState(false)
+  const [isScreenOver1200, setIsScreenOver1200] = useState(true)
+  const [currentPageNum, setCurrentPageNum] = useState(0)
 
-  async function delayFive(){
-    setTimeout(()=>{
+  console.log(currentPageNum)
+
+  let windowObserver = new ResizeObserver(() => {
+    if(parallaxRef.current){
+      parallaxRef.current.scrollTo(currentPageNum)
+    }
+    if (window.innerWidth < 1200) {
+      return setIsScreenOver1200(false)
+    }
+    setIsScreenOver1200(true)
+  })
+
+  async function delayFive() {
+    setTimeout(() => {
       setLoad(true)
     }, 3000)
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     delayFive()
   }, [])
 
 
-  
-  function handleMenuClick(pageNum){
+
+  // useEffect(() => {
+    windowObserver.observe(document.body)
+  // },[])
+
+  function handlePageRedirection(page) {
+    setCurrentPageNum(page)
+    parallaxRef.current.scrollTo(page)
+  }
+
+
+
+
+  function handleMenuClick(pageNum) {
     parallaxRef.current.scrollTo(pageNum)
   }
 
 
 
-  if(load){
+  if (load) {
     return (
       <Suspense>
-      <div className="App">
-        <SideBar handleClick={handleMenuClick}/>
-        <div className="main-page">
-          <Parallax pages={4} className="parallaxCon" style={{width:"90vw"}} ref={parallaxRef}>
-            <ParallaxLayer speed={1.2}>
-                <PageDecorationHeader/>
-                <Home scrollTo={()=>handleMenuClick(3)}/>
-                <PageDecorationFooter/>
+        <div className="App">
+          <MenuBar isScreenOver1200={isScreenOver1200} onScroll={handlePageRedirection} />
+          <Parallax pages={4} className="parallax-container" ref={parallaxRef}>
+            <ParallaxLayer speed={1} className="parallax-layer">
+              <Home scrollTo={() => handleMenuClick(3)} isScreenOver1200={isScreenOver1200} />
             </ParallaxLayer>
-            <ParallaxLayer offset={1} speed={2}  >
-              <div className="parallax-page-container">
-                <PageDecorationHeader/>
-                <AboutMe/>
-                <PageDecorationFooter/>
-              </div>
+            <ParallaxLayer offset={1} speed={1} className="parallax-layer" >
+              <AboutMe />
             </ParallaxLayer>
-            <ParallaxLayer offset={2} style={{backgroundColor: "var(--almost-black)", color: "white"}} speed={1}>
-              <div className="parallax-page-container">
-                <PageDecorationHeader/>
-                <Projects/>
-                <PageDecorationFooter/>
-              </div>
+            <ParallaxLayer offset={2} speed={1} className="parallax-layer">
+              <Projects isScreenOver1200={isScreenOver1200} />
             </ParallaxLayer>
-            <ParallaxLayer offset={3} speed={1}>
-              <div className="parallax-page-container">
-                  <PageDecorationHeader/>
-                  <ContactMe/>
-                  <PageDecorationFooter/>
-              </div>
+            <ParallaxLayer offset={3} speed={1} className="parallax-layer">
+              <ContactMe />
             </ParallaxLayer>
           </Parallax>
         </div>
-      </div>
       </Suspense>
     );
-  }else{
+  } else {
     return (
-      <LoadingScreen/>
+      <LoadingScreen />
     )
   }
-  
-
 }
 
-function PageDecorationHeader(){
+function PageDecorationHeader() {
   return (
     <div className="html-decoration decoration-header">
       <p className="deco-html">{"<html>"}</p>
@@ -88,7 +96,7 @@ function PageDecorationHeader(){
   )
 }
 
-function PageDecorationFooter(){
+function PageDecorationFooter() {
   return (
     <div className="html-decoration decoration-footer">
       <p className="deco-body">{"<body/>"}</p>
@@ -96,7 +104,5 @@ function PageDecorationFooter(){
     </div>
   )
 }
-
-
 
 export default App;

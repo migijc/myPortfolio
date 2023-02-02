@@ -21,6 +21,7 @@ export default function ProjectsDisplay(props){
 
     function handleHover(e){
         setViewedProject(e.target.parentNode.dataset.project)
+        console.log(e.target.parentNode.dataset.project)
     }
 
     useEffect(()=>{
@@ -32,22 +33,22 @@ export default function ProjectsDisplay(props){
 
     return(
         <div className="projects-container">
-            <div className="feat-project-container feat-one" data-project={"insta"} >
+            <div className="featured-project-container featured-one" data-project={"insta"} >
                 <img src={instaMain} className="featured-image"/>
                 <div className="image-cover" data-project={"insta"}/>
                 <button className="view-project-button" onClick={(e)=>{handleHover(e)}}>View Project</button>
             </div>
-            <div className="feat-project-container feat-two" data-project={"ifind"}>
+            <div className="featured-project-container featured-two" data-project={"ifind"}>
                 <img src={iFindMain} className="featured-image "/>
                 <div className="image-cover" data-project={"iFind"}/>
                 <button className="view-project-button" onClick={(e)=>{handleHover(e)}}>View Project</button>
             </div>
-            <div className="feat-project-container feat-three" data-project={"battleship"}>
+            <div className="featured-project-container featured-three" data-project={"battleship"}>
                 <img src={battleshipMain} className="featured-image "/>
                 <div className="image-cover" data-project={"battleship"}/>
                 <button className="view-project-button" onClick={(e)=>{handleHover(e)}}>View Project</button>
             </div>
-            <div className="feat-project-container feat-four" data-project={"todo"}>
+            <div className="featured-project-container featured-four" data-project={"todo"}>
                 <img src={todoMain} className="featured-image "/>
                 <div className="image-cover" data-project={"todo"}/>
                 <button className="view-project-button" onClick={(e)=>{handleHover(e)}}>View Project</button>

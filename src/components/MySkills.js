@@ -25,62 +25,61 @@ export default function MySkills(){
 
     return (
         <div className="skills-container">
-            <div className="skill-container">
-                <p>React.js</p>
+            <div className="skill-icon-container">
                 <SiReact className="skill-icon" data-name={"React.js"}/>
             </div>
-            <div className="skill-container">
-                <p>Three.js</p>
+
+            <div className="skill-icon-container">
                 <SiThreedotjs className="skill-icon" data-name={"Three.js"}/>
             </div>
-            <div className="skill-container">
-                <p>CSS</p> 
+
+            <div className="skill-icon-container">
                 <IoLogoCss3 className="skill-icon" data-name={"CSS"}/>
             </div>
-            <div className="skill-container">
-                <p>HTML</p>
+
+            <div className="skill-icon-container">
                 <IoLogoHtml5 className="skill-icon" data-name={"HTML"}/>
             </div>
-            <div className="skill-container">
-                <p>JavaScript</p>
+
+            <div className="skill-icon-container">
                 <IoLogoJavascript className="skill-icon" data-name={"JavaScript"}/>
             </div>
-            <div className="skill-container">
-                <p>Node.js</p>
+
+            <div className="skill-icon-container">
                 <SiNodedotjs className="skill-icon" data-name={"Node.js"}/>
             </div>
-            <div className="skill-container">
-                <p>Firebase</p>
+
+            <div className="skill-icon-container">
                 <SiFirebase className="skill-icon" data-name={"Firebase"}/>
             </div>
-            <div className="skill-container">
-                <p>NPM</p>
+
+            <div className="skill-icon-container">
                 <IoLogoNpm className="skill-icon" data-name={"NPM"}/>
             </div>
-            <div className="skill-container">
-                <p>Git</p>
+
+            <div className="skill-icon-container">
                 <SiGit className="skill-icon" data-name={"Git"}/>
             </div>
-            <div className="skill-container">
-                <p>Webpack</p>
+
+            <div className="skill-icon-container">
                 <SiWebpack className="skill-icon" data-name={"Webpack"}/>
             </div>
-            <div className="skill-container">
-                <p>Jest</p>
+
+            <div className="skill-icon-container">
                 <SiJest className="skill-icon"  data-name={"Jest"}/>
             </div>
-            <div className="skill-container">
-                <p>Adobe Xd</p>
+
+            <div className="skill-icon-container">
                 <SiAdobexd className="skill-icon"  data-name={"Adobe XD"}/>
             </div>
-            <div className="skill-container">
-                <p>Github</p>
+
+            <div className="skill-icon-container">
                 <IoLogoGithub className="skill-icon"  data-name={"Github"}/>
             </div>
-            <div className="skill-container">
-                <p>Blender</p>
+
+            <div className="skill-icon-container">
                 <SiBlender className="skill-icon"  data-name={"Blender"}/>
-            </div>
+            </div>  
         </div>
     )
 }
