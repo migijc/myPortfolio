@@ -1,5 +1,5 @@
 import { db } from "../FirebaseApp"
-import { collection, addDoc, doc } from "firebase/firestore"
+import { collection, addDoc, doc, onSnapshot} from "firebase/firestore"
 import { useEffect, useRef, useState, } from "react"
 import {IoMdClose, IoMdCheckmark} from "react-icons/io"
 import {CgAsterisk} from "react-icons/cg"
@@ -17,6 +17,17 @@ export default function ContactMeForm() {
     const messageInputRef = useRef(null)
 
     let collectionRef = collection(db, "messagesReceived")
+    const notificationRef = useRef(null)
+
+
+
+ 
+    function displaySentNotification(){
+        notificationRef.current.classList.add("open")
+        setTimeout(()=>{
+            notificationRef.current.classList.remove("open")
+        }, 4000)
+    }
 
 
     function handleNameInput(e) {
@@ -43,15 +54,17 @@ export default function ContactMeForm() {
     }
 
     async function sendMessage(){
-console.log("attempting")
-        // resetForm()
         if(formRef.current.checkValidity()){
             await addDoc((collectionRef), {
                 name,
                 email,
                 subject,
                 message,
+            }).then(()=>{
+                resetForm()
+                displaySentNotification()
             })
+           
         } else{
         formRef.current.reportValidity()
         }
@@ -75,6 +88,9 @@ console.log("attempting")
                 <textarea placeholder="Message" onChange={(e)=>handleMessageInput(e)} value={message} ref={messageInputRef} required maxLength={500}></textarea>
             </div>
             <button onClick={()=>sendMessage()} className="send-message-btn" type="button"  >Send Message</button>
+            <div ref={notificationRef} className="sent-notification">
+                <p>Message sent!</p>
+            </div>
         </form>
     )
 }

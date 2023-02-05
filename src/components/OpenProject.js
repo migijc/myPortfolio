@@ -26,7 +26,7 @@ export default function OpenProject(props){
 let projects={
     insta: {
         projectName: "Instagram Clone",
-        projectDescription: "This project features a social media platform that allows users to share photos, as well as interact with each other through likes and comments. The front end of the website was built using React and JSX, while the back end of the website was built using Firebase. Some of the core functionalities of this  Instagram clone include the ability to create a profile, follow other users, post and view content, and interact with others through likes, comments.",
+        projectDescription: "This project features a social media platform that allows users to share photos, as well as interact with each other through likes and comments. The front end of the website was built using React and JSX, while the back end of the website was built using Firebase. Some of the core functionalities of this Instagram clone include the ability to create a profile, follow other users, post and view content, and interact with others through likes, comments.",
         githubLink:"https://github.com/migijc/react-instagram-replica",
         images:[instaMain, instaProfile, instaEdit]
     },

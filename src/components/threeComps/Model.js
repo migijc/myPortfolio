@@ -9,6 +9,7 @@ export default function Model(props){
     
     
     let model= useLoader(GLTFLoader, "./nameNoLights.glb")
+
     const {camera}= useThree()
     useEffect(()=>{
         props.setCamera(camera)

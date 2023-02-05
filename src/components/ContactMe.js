@@ -45,7 +45,6 @@ export default function ContactMe(){
                     <span onMouseEnter={(e)=>animateHover(e)} className="contact-ch-seven">t</span>
                     <span onMouseEnter={(e)=>animateHover(e)} className="contact-ch-eight">m</span>
                     <span onMouseEnter={(e)=>animateHover(e)} className="contact-ch-nine">e</span>
-                    <span onMouseEnter={(e)=>animateHover(e)} className="contact-ch-ten">!</span>
                 </h1>                
                 <div className="primary-info-container page-info-container">
                     <p className="contact-primary-para primary-para">Thank you for visiting my portfolio! If you're interested in working with me, please don't hesitate to reach out via the contact form.<br/>

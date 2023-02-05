@@ -60,7 +60,7 @@ function App() {
 
   if (load) {
     return (
-      <Suspense>
+      <Suspense fallback={<LoadingScreen/>}>
         <div className="App">
           <MenuBar isScreenOver1200={isScreenOver1200} onScroll={handlePageRedirection} />
           <Parallax pages={4} className="parallax-container" ref={parallaxRef}>

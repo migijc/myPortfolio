@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import {IoLogoReact,
      IoLogoHtml5,
         IoLogoCss3,
@@ -6,6 +7,7 @@ import {IoLogoReact,
        IoLogoGithub
 
     } from "react-icons/io"
+
 import {SiThreedotjs,
      SiNodedotjs,
       SiWebpack,
@@ -17,10 +19,25 @@ import {SiThreedotjs,
         SiGit
     } from "react-icons/si"
 
-
-
+ 
 
 export default function MySkills(){
+
+    function generateRandomOpacity(){
+        const randomOpacity= Math.random()*1
+        console.log(randomOpacity)
+        return Math.random()*1
+    }
+
+    useEffect(()=>{
+        let iconNodes= document.body.querySelectorAll(".skill-icon")
+        console.log(iconNodes)
+        iconNodes.forEach(node=>{
+            node.style.opacity=generateRandomOpacity()
+        })
+    }, [])
+
+
 
 
     return (
@@ -45,7 +62,7 @@ export default function MySkills(){
                 <IoLogoJavascript className="skill-icon" data-name={"JavaScript"}/>
             </div>
 
-            <div className="skill-icon-container">
+            <div className="skill-icon-container" >
                 <SiNodedotjs className="skill-icon" data-name={"Node.js"}/>
             </div>
 
