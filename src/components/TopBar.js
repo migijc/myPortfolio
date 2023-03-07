@@ -1,4 +1,7 @@
-import Menu from "./Menu"
+// import Menu from "./Menu"
+import { MdOutlineMail } from "react-icons/md"
+import {TiSocialLinkedinCircular, TiSocialGithubCircular} from 'react-icons/ti'
+import {AiOutlineProject} from 'react-icons/ai'
 import logo from "../img/logoTransparent.png"
 
 export default function TopBar(props){
@@ -7,10 +10,26 @@ export default function TopBar(props){
     let handleMenu= props.setIsMenuOpen
 
     return (
-        <div className="top-bar">
-            <img src={logo} className="logo"/>
-            <Menu onScroll={onScroll} setIsMenuOpen={handleMenu}/>
-        </div>
+        <nav className="top-bar">
+            <ul style={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                borderBottom: '1px solid var(--borderGray)',
+                gap: '1rem',
+                alignItems: 'center',
+                padding: '1.5rem .8rem',
+            }}>
+                <li style={{position: 'absolute', left: '.8rem', display: 'flex', gap: '.3rem'}}>
+                    <div className="mail-manu-icon">
+                        <MdOutlineMail className="mailIcon"/>
+                    </div>
+                    <button > Get in touch</button>
+                </li>
+                <li><button className="linkedInButton menuLinkBtn"> <TiSocialLinkedinCircular  className="menu-link-icon"/> </button></li>
+                <li><button className="githubMenuButton menuLinkBtn"> <TiSocialGithubCircular className="menu-link-icon" /> </button></li>
+                <li><button className="projectsMenuButton menuLinkBtn"> <AiOutlineProject className="menu-link-icon" /> </button></li>
+            </ul>
+        </nav>
 
     )
 }
