@@ -21,7 +21,7 @@ import {SiThreedotjs,
    } from "react-icons/si"
 
 export default function Skills(){
-    const [listOfSkills, setListOfSkills] = useState(null)
+    const [listOfSkills, setListOfSkills] = useState(null);
 
     function getAllSkills(){
         let listKey= 1
@@ -35,19 +35,18 @@ export default function Skills(){
             )
             listKey++
         }
-        setListOfSkills(list)
-    }
+        setListOfSkills(list);
+    };
+
     useEffect(() => {
-        getAllSkills()
-    }, [])
-
-
+        getAllSkills();
+    }, []);
 
     if(listOfSkills) {
             return (
         <div className="skills-container">
            {listOfSkills.map(skill=>{
-                return skill
+                return skill;
            })}
         </div>
     )
@@ -58,67 +57,67 @@ export default function Skills(){
 const skills = {
     reactjs: {
         name: "React.js",
-        icon: <SiReact/>
+        icon: <SiReact className="logoIcon"/>
     },
     three: {
         name: "Three.js",
-        icon: <SiThreedotjs/>
+        icon: <SiThreedotjs className="logoIcon"/>
     },
     reactNative: {
         name: "React Native",
-        icon: <SiReact/>
+        icon: <SiReact className="logoIcon"/>
     },
     css: {
         name: " Vanilla CSS",
-        icon: <IoLogoCss3/>
+        icon: <IoLogoCss3 className="logoIcon"/>
     },
     html: {
         name: "HTML",
-        icon: <IoLogoHtml5/>
+        icon: <IoLogoHtml5 className="logoIcon"/>
     },
     javascript: {
         name: "JavaScript",
-        icon: <IoLogoJavascript/>
+        icon: <IoLogoJavascript className="logoIcon"/>
     },
     node: {
         name: "Node",
-        icon: <SiNodedotjs/>
+        icon: <SiNodedotjs className="logoIcon"/>
     },
     firebase: {
         name: "Firebase",
-        icon: <SiFirebase/>
+        icon: <SiFirebase className="logoIcon"/>
     },
     mongo: {
         name: "MongoDB",
-        icon: <SiMongodb/>
+        icon: <SiMongodb className="logoIcon"/>
     },
     npm: {
         name: "NPM",
-        icon: <IoLogoNpm/>
+        icon: <IoLogoNpm className="logoIcon"/>
     },
     git: {
         name: "Git",
-        icon: <SiGit/>
+        icon: <SiGit className="logoIcon"/>
     },
     webpack: {
         name: "Webpack",
-        icon: <SiWebpack/>
+        icon: <SiWebpack className="logoIcon"/>
     },
     jest: {
         name: "Jest",
-        icon: <SiJest/>
+        icon: <SiJest className="logoIcon"/>
     },
     adobexd: {
         name: "Adobe XD",
-        icon: <SiAdobexd/>
+        icon: <SiAdobexd className="logoIcon"/>
     },
     github: {
         name: "Github",
-        icon: <IoLogoGithub/>
+        icon: <IoLogoGithub className="logoIcon"/>
     },
     blender: {
         name: "Blender",
-        icon: <SiBlender/>
+        icon: <SiBlender className="logoIcon"/>
     },
 
 }

@@ -15,9 +15,9 @@ export default function PageIntro() {
                  <img src={myPic} alt="Miguel Gil" />
             </div>
 
-            <p>Hi, Im Miguel Gil</p>
+            <p className="introMessage">Hi, Im Miguel Gil</p>
 
-            <h1 style={{fontSize: '1.8rem', textAlign: 'center'}}>Fullstack Developer<br/> React.js & React Native</h1>
+            <h1 style={{fontSize: '1.8rem', textAlign: 'center', fontSize: '2rem'}}>Fullstack Developer<br/> React.js & React Native</h1>
             <SeeProjectsButton/>
         </div>
     )
@@ -29,8 +29,10 @@ function SeeProjectsButton(){
         <button style={{
             backgroundColor: 'var(--buttonGray)',
             border: '1px solid var(--borderGray)',
-            padding: '1.4rem 3rem',
-            borderRadius: '1rem',
+            padding: '1.2rem 3rem',
+            borderRadius: '900rem',
+            width: '25rem',
+            fontSize: '1rem',
         }}>
         See Projects
         </button>

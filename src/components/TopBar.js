@@ -23,9 +23,9 @@ export default function TopBar(props){
                     <div className="mail-manu-icon">
                         <MdOutlineMail className="mailIcon"/>
                     </div>
-                    <button > Get in touch</button>
+                    <button className="menuContactButton"> Get in touch</button>
                 </li>
-                <li><button className="linkedInButton menuLinkBtn"> <TiSocialLinkedinCircular  className="menu-link-icon"/> </button></li>
+                <li><button className="linkedInButton menuLinkBtn"> <TiSocialLinkedinCircular className="menu-link-icon"/> </button></li>
                 <li><button className="githubMenuButton menuLinkBtn"> <TiSocialGithubCircular className="menu-link-icon" /> </button></li>
                 <li><button className="projectsMenuButton menuLinkBtn"> <AiOutlineProject className="menu-link-icon" /> </button></li>
             </ul>
